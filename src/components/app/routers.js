@@ -4,7 +4,7 @@ import Home from './Home'
 
 const Routers = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='dona-clone'>
             <Routes>
                 <Route path="/" element={<Home/>} />
             </Routes>
