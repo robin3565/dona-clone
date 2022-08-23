@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dona-clone/static/css/main.60ea6df8.css",
-    "main.js": "/dona-clone/static/js/main.ceebb353.js",
+    "main.css": "/dona-clone/static/css/main.9ba945df.css",
+    "main.js": "/dona-clone/static/js/main.5d844cc6.js",
     "static/js/787.17f4b47e.chunk.js": "/dona-clone/static/js/787.17f4b47e.chunk.js",
     "index.html": "/dona-clone/index.html",
-    "main.60ea6df8.css.map": "/dona-clone/static/css/main.60ea6df8.css.map",
-    "main.ceebb353.js.map": "/dona-clone/static/js/main.ceebb353.js.map",
+    "main.9ba945df.css.map": "/dona-clone/static/css/main.9ba945df.css.map",
+    "main.5d844cc6.js.map": "/dona-clone/static/js/main.5d844cc6.js.map",
     "787.17f4b47e.chunk.js.map": "/dona-clone/static/js/787.17f4b47e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.60ea6df8.css",
-    "static/js/main.ceebb353.js"
+    "static/css/main.9ba945df.css",
+    "static/js/main.5d844cc6.js"
   ]
 }
