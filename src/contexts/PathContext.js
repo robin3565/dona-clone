@@ -1,12 +1,12 @@
 import { createContext, useContext, useState } from "react";
 
 const PathState = createContext();
-const init = "/"
 
 export const usePathState = () => {
     return useContext(PathState);
 }
 
+const init = "/"
 export const PathStateProvider = ({ children }) => {
     const [path, setPath] = useState(init);
     

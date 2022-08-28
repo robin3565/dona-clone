@@ -1,9 +1,8 @@
-import { createGlobalStyle } from "styled-components";
 import { CategoryProvider } from "../../contexts/CategoryContext";
 import { TodoProvider } from "../../contexts/TodoConext";
 import { UserProvider } from "../../contexts/UserContext";
 import { PathStateProvider } from '../../contexts/PathContext'
-import Routers from "./routers";
+import  Home  from './Home'
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
         <UserProvider>
           <CategoryProvider>
             <PathStateProvider>
-              <Routers />
+              <Home/>
             </PathStateProvider>
           </CategoryProvider>
         </UserProvider>

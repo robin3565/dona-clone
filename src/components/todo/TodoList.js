@@ -2,7 +2,7 @@ import { usePathState } from '../../contexts/PathContext';
 import { useTodoState } from '../../contexts/TodoConext'
 import TodoItem from './TodoItem';
 
-export default function TodoList() {
+const TodoList = () => {
   const todos = useTodoState();
   const { path } = usePathState();
 
@@ -25,3 +25,5 @@ export default function TodoList() {
     </ul>
   )
 }
+
+export default TodoList

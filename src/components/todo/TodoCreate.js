@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useCategoryState } from '../../contexts/CategoryContext';
 import { usePathState } from '../../contexts/PathContext';
 import { useTodoDispatch } from '../../contexts/TodoConext'
@@ -9,11 +9,14 @@ const TodoCreate = () => {
   const { path } = usePathState();
   const todoDispatch = useTodoDispatch();
   const categoryState = useCategoryState();
+  const inputRef = useRef();
 
   const filterCategory = categoryState.filter(item => item.slug === path);
 
-  console.log("TodoCreate")
-
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [])
+  
   const onSubmit = (e) => {
     e.preventDefault();
     if (!todoText) return;
@@ -41,6 +44,7 @@ const TodoCreate = () => {
         <input
           className='bg-gray-200 w-full block rounded-lg pl-3 pr-3 py-6 focus:outline-none'
           placeholder='Write a new task...'
+          ref={inputRef}
           type="text"
           onChange={(e) => setTodoText(e.target.value)}
           value={todoText}

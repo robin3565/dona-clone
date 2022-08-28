@@ -1,4 +1,3 @@
-import React from 'react'
 import { useCategoryState } from '../../contexts/CategoryContext'
 import CategoryItem from './CategoryItem';
 

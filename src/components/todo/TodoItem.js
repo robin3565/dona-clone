@@ -7,22 +7,16 @@ const TodoItem = ({ id, text, done }) => {
   const [newText, setNewText] = useState(text)
 
   const dispatch = useTodoDispatch();
+  const onClear = () => dispatch({ type: 'CLEAR', id });
+  const onRemove = () => dispatch({ type: 'REMOVE', id });
+  const onToggle = () => setEditing((prev) => !(prev));
 
-  const onClear = () => {
-    dispatch({ type: 'CLEAR', id })
-  }
-
-  const onRemove = () => {
-    dispatch({ type: 'REMOVE', id })
-  }
-
-  const onToggle = () => {
-    setEditing((prev) => !(prev))
-  }
-
-  const onUpdate = (e, id, text) => {
+  const onUpdate = (e, id, newText) => {
     e.preventDefault();
-    dispatch({ type: 'UPDATE', id, text });
+    if(text == newText) {
+      setEditing((prev) => !(prev))
+    }
+    dispatch({ type: 'UPDATE', id, newText });
     setEditing((prev) => !(prev))
   }
 
@@ -60,12 +54,14 @@ const TodoItem = ({ id, text, done }) => {
       </div>
       <div className='flex flex-row flex-nowrap'>
         <button
-          className='rounded-md w-8 h-8 relative grid justify-center mx-1 items-center hover:bg-gray-300'
+          className='rounded-md w-8 h-8 relative grid justify-center 
+          mx-1 items-center hover:bg-gray-300'
           onClick={onToggle}>
           <FaRegEdit className='text-gray-500' />
         </button>
         <button
-          className='rounded-md w-8 h-8 relative grid justify-center items-center mr-3 hover:bg-gray-300'
+          className='rounded-md w-8 h-8 relative grid justify-center 
+          items-center mr-3 hover:bg-gray-300'
           onClick={onRemove}>
           <FaTrash className='text-gray-500' />
         </button>

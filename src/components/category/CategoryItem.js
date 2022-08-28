@@ -1,16 +1,14 @@
 import { useCategoryDispatch } from '../../contexts/CategoryContext';
 import { usePathState } from '../../contexts/PathContext';
 import { FaTrash, FaRegHeart } from "react-icons/fa";
-
 import { useTodoState } from '../../contexts/TodoConext'
+
 const CategoryItem = ({ id, name, slug }) => {
     const categoryDispath = useCategoryDispatch();
-    const { path, changePath } = usePathState();
+    const { changePath } = usePathState();
     const todoState = useTodoState();
     const filterCategoryCount = todoState.filter(item => item.category[0].slug === slug).length
-
     
-
     const handleRemove = (e) => {
         e.preventDefault();
         categoryDispath({ type: "REMOVE", id })
@@ -21,7 +19,8 @@ const CategoryItem = ({ id, name, slug }) => {
         <div
             id="category-items"
             onClick={() => { changePath(slug) }}
-            className='flex flex-nowrap flex-row w-full justify-between bg-gray-100 p-5 my-3 rounded-lg'>
+            className='flex flex-nowrap flex-row w-full justify-between 
+            bg-gray-100 p-5 my-3 rounded-lg'>
             <FaRegHeart
                 className='m-1 mr-6 text-rose-500' />
             <div

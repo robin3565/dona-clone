@@ -1,4 +1,3 @@
-import React from 'react'
 import { useUserState } from '../../contexts/UserContext'
 import Category from '../category/Category'
 import Todo from '../todo/Todo'

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useCategoryDispatch, useCategoryState } from '../../contexts/CategoryContext';
 import { FaPlus } from "react-icons/fa";
 import { usePathState } from '../../contexts/PathContext';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function CategoryCreate() {
     const [categoryName, setCategoryName] = useState("");
@@ -17,7 +18,7 @@ export default function CategoryCreate() {
         dispatch({
             type: "CREATE",
             category: {
-                id: categoryState.length,
+                id: uuidv4(),
                 name: categoryName,
                 slug: `${categoryName}`
             }

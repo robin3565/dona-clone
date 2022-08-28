@@ -9,8 +9,10 @@ export default function Welcome() {
     }
 
     return (
+        // wrapper
         <div className='absolute grid place-items-center 
         inset-0 w-screen h-full z-10 bg-gray-900/[.2]'>
+            {/* modal */}
             <div className='flex flex-col w-96 h-96 bg-neutral-50 
             rounded-lg justify-center p-20 drop-shadow-lg'>
                 <div className='flex flex-col place-items-center'>
