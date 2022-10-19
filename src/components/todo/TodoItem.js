@@ -5,15 +5,19 @@ import { FaCheck, FaTrash, FaRegEdit } from "react-icons/fa";
 const TodoItem = ({ id, text, done }) => {
   const [editing, setEditing] = useState(false);
   const [newText, setNewText] = useState(text)
+  const [clear, setClear] = useState(false);
 
   const dispatch = useTodoDispatch();
-  const onClear = () => dispatch({ type: 'CLEAR', id });
+  const onClear = () => {
+    dispatch({ type: 'CLEAR', id });
+    setClear(prev => !prev);
+  }
   const onRemove = () => dispatch({ type: 'REMOVE', id });
   const onToggle = () => setEditing((prev) => !(prev));
 
   const onUpdate = (e, id, newText) => {
     e.preventDefault();
-    if(text == newText) {
+    if (text == newText) {
       setEditing((prev) => !(prev))
     }
     dispatch({ type: 'UPDATE', id, newText });
@@ -49,7 +53,7 @@ const TodoItem = ({ id, text, done }) => {
           )
           :
           (
-            <p>{newText}</p>
+            <p className={`${clear ? 'line-through' : ''}`}>{newText}</p>
           )}
       </div>
       <div className='flex flex-row flex-nowrap'>
